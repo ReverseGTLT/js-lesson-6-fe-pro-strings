@@ -7,7 +7,13 @@
 export const replaceZAndVFromString = (string) => {
   let lowerString = string.toLowerCase();
   let lowerSymbol = '*';
-  return lowerString.replaceAll('z', lowerSymbol).replaceAll('v', lowerSymbol);
+  let result = '';
+  if (string[0] === string[0].toUpperCase()) {
+   result = `${lowerString[0].toUpperCase()}${lowerString.slice(1).replaceAll('z', lowerSymbol).replaceAll('v', lowerSymbol)}`;
+  } else {
+    result = lowerString.replaceAll('z', lowerSymbol).replaceAll('v', lowerSymbol);
+  }
+  return result;
 };
 
 /**
