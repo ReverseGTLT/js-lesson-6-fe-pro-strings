@@ -52,15 +52,15 @@ export const truncate = (string, length) => {
  * @returns {number}
  */
 export const quantityOfSymbols = (string, symbol) => {
-  let i = 0;
+  let amount = 0;
   let lowerString = string.toLowerCase();
   let lowerSymbol = symbol.toLowerCase();
   for (let num = 0; num < lowerString.length; num++) {
     if (lowerString[num] === lowerSymbol) {
-      i++;
+      amount++;
     }
   }
-  return i;
+  return amount;
 };
 
 /**
@@ -79,16 +79,16 @@ export const quantityOfSymbols = (string, symbol) => {
  * @returns {number}
  */
 export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
-  let i = 0;
+  let amount = 0;
   let index = 0;
   while (true) {
     let idx = string.toLocaleLowerCase().indexOf(symbol.toLowerCase(), index);
     if (idx >= 0) {
       index = idx + 1;
-      i++;
+      amount++;
     } else if (idx === -1) {
       break;
     }
   }
-  return i;
+  return amount;
 };
